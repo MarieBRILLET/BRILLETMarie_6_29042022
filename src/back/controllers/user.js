@@ -2,6 +2,8 @@
 const bcrypt = require('bcrypt');
 //importation crypto-js pour chiffrer l'email
 const cryptojs = require('crypto-js');
+//importation jsonwebtoken
+const jwt = require('jsonwebtoken');
 //importation dotenv
 const dotenv = require('dotenv');
 const result = dotenv.config();
@@ -51,7 +53,16 @@ exports.login = (req, res, next) => {
                         return res.status(401).json({error: 'Mot de passe incorrect !'});
                     }
                     //si password est correct
-                    res.status(200).json({message: 'Connexion réussie !'});
+                    //envoie response serveur du userId et du token d'authentification
+                    res.status(200).json({
+                        //encodage userId pour création de nouveau objet (objet et userId seront liés)
+                        userId: user._id,
+                        token: jwt.sign(
+                            {userId: user._id},
+                            `${process.env.JWT_KEY_SECRET}`,
+                            {expiresIn: '1h'}
+                        ),
+                    });
                 })
                 .catch((error) => res.status(500).json({error}));
         })

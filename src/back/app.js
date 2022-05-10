@@ -35,7 +35,7 @@ app.use(express.json());
 //});
 
 //la route pour l'authentification
-app.use('/api/authentification', userRoutes);
+app.use('/api/auth', userRoutes);
 
 //exportation du fichier
 module.exports = app;
