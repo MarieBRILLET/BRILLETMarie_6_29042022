@@ -1,5 +1,5 @@
 //importation monogoose
-const mongoose = require('./db/db');
+const mongoose = require('mongoose');
 
 //modèle de données pour les nouveaux utilisateurs (signup)
 const userSchema = mongoose.Schema({
