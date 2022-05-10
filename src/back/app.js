@@ -1,6 +1,9 @@
 //importation de express
 const express = require('express');
 
+//importation de mongoose
+const mongoose = require('./db/db');
+//création de l'application express
 const app = express();
 
 app.use((req, res) => {
