@@ -10,6 +10,9 @@ const userRoutes = require('./routes/user');
 //création de l'application express
 const app = express();
 
+//debug mongoose
+mongoose.set('debug', true);
+
 //gérer les problèmes de CORS (cross origin resource sharing)
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
