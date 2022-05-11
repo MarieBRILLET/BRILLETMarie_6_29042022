@@ -60,7 +60,7 @@ exports.login = (req, res, next) => {
                         token: jwt.sign(
                             {userId: user._id},
                             `${process.env.JWT_KEY_SECRET}`,
-                            {expiresIn: '1h'}
+                            {expiresIn: '30min'}//peut être modifié
                         ),
                     });
                 })
