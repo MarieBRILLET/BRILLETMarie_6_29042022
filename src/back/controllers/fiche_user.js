@@ -11,3 +11,8 @@ exports.createFiche_user = (req, res, next) => {
         }))
         .catch((error) => res.status(400).json({ error }));
 }
+exports.getFiche_user = (req, res, next) => {
+    Fiche_user.find()
+        .then((fiche_user) => res.status(200).json(fiche_user))
+        .catch((error) => res.status(404).json({ error }));
+}

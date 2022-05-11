@@ -8,7 +8,9 @@ const fiche_userController = require('../controllers/fiche_user');
 const router = express.Router();
 
 //route (endpoint)
-router.post('/createfiche_user', fiche_userController.createFiche_user);
+router.post('/', fiche_userController.createFiche_user);
+
+router.get('/', fiche_userController.getFiche_user);
 
 //exportation module
 module.exports = router;
