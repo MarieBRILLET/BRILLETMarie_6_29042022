@@ -6,7 +6,7 @@ const mongoose = require('./db/db');
 
 //importation des routes
 const userRoutes = require('./routes/user');
-const fiche_userRoutes = require('./routes/fiche_user');
+const saucesRoutes = require('./routes/sauces');
 //création de l'application express
 const app = express();
 
@@ -33,8 +33,8 @@ app.use(express.json());
 //la route pour l'authentification
 app.use('/api/auth', userRoutes);
 
-//la route pour les fiches user
-app.use('/api/fiche_user', fiche_userRoutes);
+//la route pour les sauces
+app.use('/api/sauces', saucesRoutes);
 
 //exportation du fichier
 module.exports = app;
