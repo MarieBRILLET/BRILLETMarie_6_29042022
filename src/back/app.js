@@ -7,6 +7,10 @@ const mongoose = require('./db/db');
 //importation des routes
 const userRoutes = require('./routes/user');
 const saucesRoutes = require('./routes/sauces');
+
+//importation node.js
+const path = require('path');
+
 //création de l'application express
 const app = express();
 
@@ -35,6 +39,9 @@ app.use('/api/auth', userRoutes);
 
 //la route pour les sauces
 app.use('/api/sauces', saucesRoutes);
+
+//pour accéder aux images du dossier
+app.use('/images', express.static(path.join(__dirname, 'images')));
 
 //exportation du fichier
 module.exports = app;
