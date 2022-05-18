@@ -10,10 +10,11 @@ const Schema = mongoose.Schema({
     mainPepper: { type: String, required: true },
     imageUrl: { type: String, required: true },
     heat: { type: Number, required: true },
-    //likes: {type: Number, required: true},
-    //dislikes: {type: Number, required: true},
-    //usersLiked: {type: Array, required: true},//array de userId
-    //usersDisliked: {type: Array, required: true},
+    //Systeme de notation
+    likes: {type: Number, defaut: 0},
+    dislikes: {type: Number, defaut: 0},
+    usersLiked: {type: [String]},//array de userId
+    usersDisliked: {type: [String]}
 });
 
 //exportation module

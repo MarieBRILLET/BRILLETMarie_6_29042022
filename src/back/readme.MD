@@ -26,7 +26,7 @@ Body-->raw :
 ## Pour créer la fiche sauce (POST)
 http://localhost:3000/api/sauces/
 
-Params--> KEY: userId VALUE: _id de user
+Params--> KEY: userId VALUE: _id de sauce
 Authorization--> Bearer Token Token: "xxxxxx"
 Body-->form-data-->
     KEY: ficheSauce
@@ -56,13 +56,13 @@ Body-->raw :
 http://localhost:3000/api/sauces/:id
 
 Authorization--> Bearer Token Token: "xxxxxx"
-Params--> KEY: userId VALUE: _id de user
+Params--> KEY: userId VALUE: _id de sauce
 Body-->none
 
 ## Pour modifier une fiche sauce (PUT)
 http://localhost:3000/api/sauces/:id
 
-Params--> KEY: userId VALUE: _id de user
+Params--> KEY: userId VALUE: _id de sauce
 Authorization--> Bearer Token Token: "xxxxxx"
 Body-->form-data-->
     KEY: ficheSauce
@@ -82,4 +82,15 @@ Body-->form-data-->
 ## Pour supprimer une fiche sauce (DELETE)
 http://localhost:3000/api/sauces/:id
 
-Params--> KEY: userId VALUE: _id de user
+Params--> KEY: userId VALUE: _id de sauce
+
+## Pour liker une fiche sauce (POST)
+http://localhost:3000/api/sauces/:id/like
+
+Authorization--> Bearer Token Token: "xxxxxx"
+Params--> KEY: userId VALUE: _id de sauce
+Body-->raw :
+{
+    "userId": "xxxxxx",
+    "like": 0
+}
