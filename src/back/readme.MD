@@ -92,5 +92,5 @@ Params--> KEY: userId VALUE: _id de sauce
 Body-->raw :
 {
     "userId": "xxxxxx",
-    "like": 0
+    "like": 0 (-1 dislike, 0 neutre, 1 like)
 }
