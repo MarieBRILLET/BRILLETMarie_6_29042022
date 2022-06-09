@@ -1,7 +1,7 @@
 //importation models fiche_user
 const Sauces = require('../models/sauces');
 
-exports.likeSaucesId = (req, res, next) => {
+exports.likeSauceId = (req, res, next) => {
     //find sauce dans base de données
     Sauces.findOne({ _id: req.params.id })
         .then((objet) => {

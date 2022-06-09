@@ -1,9 +1,11 @@
 //importation mongoose
 const mongoose = require('mongoose');
 
+const User = require('./user');
+
 //modèle donnée utilisateur pour front-end
 const Schema = mongoose.Schema({
-    userId: { type: String, required: true },
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: User },
     name: { type: String, required: true },
     manufacturer: { type: String, required: true },
     description: { type: String, required: true },
@@ -13,8 +15,8 @@ const Schema = mongoose.Schema({
     //Systeme de notation
     likes: {type: Number, defaut: 0},
     dislikes: {type: Number, defaut: 0},
-    usersLiked: {type: [String]},//array de userId
-    usersDisliked: {type: [String]}
+    usersLiked: [{ type: mongoose.Schema.Types.ObjectId, ref: User }],//array de userId
+    usersDisliked: [{ type: mongoose.Schema.Types.ObjectId, ref: User }]
 });
 
 //exportation module

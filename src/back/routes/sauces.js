@@ -13,17 +13,17 @@ const multer = require('../middleware/multer');
 const router = express.Router();
 
 //route (endpoint)
-router.post('/', authentification, multer, saucesController.createSauces);
+router.post('/', authentification, multer, saucesController.createSauce);
 
-router.get('/', authentification, saucesController.readSauces);
+router.get('/', authentification, saucesController.readSauce);
 
-router.get('/:id', authentification, saucesController.readSaucesId);
+router.get('/:id', authentification, saucesController.readSauceId);
 
-router.put('/:id', authentification, multer, saucesController.updateSaucesId);
+router.put('/:id', authentification, multer, saucesController.updateSauceId);
 
-router.delete('/:id', authentification, saucesController.deleteSaucesId);
+router.delete('/:id', authentification, saucesController.deleteSauceId);
 
-router.post('/:id/like', authentification, likeController.likeSaucesId);
+router.post('/:id/like', authentification, likeController.likeSauceId);
 
 //exportation module
 module.exports = router;
