@@ -11,6 +11,9 @@ const saucesRoutes = require('./routes/sauces');
 //importation node.js
 const path = require('path');
 
+//importation helmet
+const helmet = require('helmet');
+
 //création de l'application express
 const app = express();
 
@@ -18,6 +21,8 @@ const app = express();
 mongoose.set('debug', true);
 
 //gérer les problèmes de CORS (cross origin resource sharing)
+app.use(helmet());
+app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader(
@@ -32,7 +37,6 @@ app.use((req, res, next) => {
 });
 //transformer le body de la requête en json
 app.use(express.json());
-
 
 //la route pour l'authentification
 app.use('/api/auth', userRoutes);

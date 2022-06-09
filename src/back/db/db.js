@@ -1,6 +1,6 @@
 //importer variables d'environement
 const dotenv = require('dotenv');
-const result = dotenv.config();
+dotenv.config();
 
 //importer mongoose
 const mongoose = require('mongoose');

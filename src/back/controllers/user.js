@@ -6,12 +6,12 @@ const cryptojs = require('crypto-js');
 const jwt = require('jsonwebtoken');
 //importation dotenv
 const dotenv = require('dotenv');
-const result = dotenv.config();
+dotenv.config();
 //importation models user
 const User = require('../models/user');
 
 //signup enregistrement d'un nouvel utilisateur dans la base de données
-exports.signup = (req, res, next) => {
+exports.signup = (req, res) => {
     //chiffrer email avant envoi
     const emailCryptoJs = cryptojs.HmacSHA256(req.body.email, `${process.env.CRYPTOJS_EMAIL}`).toString();
     //hashage du mot de passe
@@ -35,7 +35,7 @@ exports.signup = (req, res, next) => {
 };
 
 //login authentification
-exports.login = (req, res, next) => {
+exports.login = (req, res) => {
     //chiffrer email
     const emailCryptoJs = cryptojs.HmacSHA256(req.body.email, `${process.env.CRYPTOJS_EMAIL}`).toString();
     //chercher l'utilisateur dans la base de données
