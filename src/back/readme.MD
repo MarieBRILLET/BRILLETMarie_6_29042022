@@ -29,7 +29,7 @@ http://localhost:3000/api/sauces/
 Params--> KEY: userId VALUE: _id de sauce
 Authorization--> Bearer Token Token: "xxxxxx"
 Body-->form-data-->
-    KEY: ficheSauce
+    KEY: sauce
     VALUE:
         {
             "userId": "xxxxxx",
@@ -65,7 +65,7 @@ http://localhost:3000/api/sauces/:id
 Params--> KEY: userId VALUE: _id de sauce
 Authorization--> Bearer Token Token: "xxxxxx"
 Body-->form-data-->
-    KEY: ficheSauce
+    KEY: sauce
     VALUE:
         {
             "userId": "xxxxxx",

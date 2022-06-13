@@ -3,7 +3,6 @@ const express = require('express');
 
 //importation controller
 const saucesController = require('../controllers/sauces');
-const likeController = require('../controllers/like');
 
 //importation middleware
 const authentification = require('../middleware/authentification');
@@ -23,7 +22,7 @@ router.put('/:id', authentification, multer, saucesController.updateSauceId);
 
 router.delete('/:id', authentification, saucesController.deleteSauceId);
 
-router.post('/:id/like', authentification, likeController.likeSauceId);
+router.post('/:id/like', authentification, saucesController.likeSauceId);
 
 //exportation module
 module.exports = router;
