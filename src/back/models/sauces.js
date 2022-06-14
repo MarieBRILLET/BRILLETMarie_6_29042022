@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 const User = require('./user');
 
-//modèle donnée utilisateur pour front-end
+//modèle donnée sauce pour front-end
 const Schema = mongoose.Schema({
     userId: { type: mongoose.Schema.Types.ObjectId, ref: User },
     name: { type: String, required: true },
